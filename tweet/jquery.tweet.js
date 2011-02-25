@@ -23,7 +23,7 @@
       twitter_api_url: "api.twitter.com",       // [string]   custom twitter api url, if any (apigee, etc.)
       twitter_search_url: "search.twitter.com", // [string]   custom twitter search url, if any (apigee, etc.)
       template: function(info) {                // [function] template used to construct each tweet <li>
-        return info["avatar"] + info["time"] + info["join"] + info["text"];
+        return "<div class=\"tweet_head\">" + info["avatar"] + info["user"] + info["time"] + "</div>" + info["join"] + info["text"];
       },
       comparator: function(tweet1, tweet2) {    // [function] comparator used to sort tweets (see Array.sort)
         return tweet1["tweet_time"] - tweet2["tweet_time"];
